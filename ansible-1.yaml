@@ -1,0 +1,16 @@
+---
+- host: 
+- become: True
+- tasks:
+    - name: git installation
+      apt:
+        name: github
+        state: presentt
+    - name: Deployment of .sh into the server
+      git:
+        repo: 
+        dest: /home/ubuntu
+    - name: Running commands
+      ansible.builtin.shell: ./*.sh>success.txt    
+
+...
