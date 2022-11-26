@@ -1,5 +1,5 @@
 ---
-- host: 
+- host: 3.95.20.145
 - become: True
 - tasks:
     - name: git installation
