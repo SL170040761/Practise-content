@@ -1,16 +1,17 @@
 ---
-- host: 3.95.20.145
-- become: True
-- tasks:
+- hosts: 44.202.190.45
+  become: True
+  tasks:
     - name: git installation
       apt:
-        name: github
-        state: presentt
+        name: git
+        state: present
+        update_cache: yes
     - name: Deployment of .sh into the server
       git:
-        repo: 
-        dest: /home/ubuntu
-    - name: Running commands
-      ansible.builtin.shell: ./*.sh>success.txt    
-
+        repo: https://github.com/SL170040761/Practise-content.git
+        dest: /home/pranay
+    - name: Running .sh folder
+      ansible.builtin.shell:
+        cmd: bash /home/pranay/*.sh>/home/pranay/success.txt
 ...
