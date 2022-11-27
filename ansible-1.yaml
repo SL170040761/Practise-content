@@ -1,5 +1,5 @@
 ---
-- hosts: 44.202.190.45
+- hosts: servers
   become: True
   tasks:
     - name: git installation
